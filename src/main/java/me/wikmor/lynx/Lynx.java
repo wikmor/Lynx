@@ -19,7 +19,15 @@ public final class Lynx extends SimplePlugin {
 
 	@Override
 	protected void onPluginStart() {
+		/*if (Settings.COMMAND_IS_ENABLED)
+			registerCommand(new SpawnEntityCommand());*/
+
 		// registerEvents(PlayerListener.getInstance()); handled using @AutoRegister
+	}
+
+	@Override
+	protected void onReloadablesStart() {
+		//registerCommand(new SpawnEntityCommand());
 	}
 
 	@EventHandler
