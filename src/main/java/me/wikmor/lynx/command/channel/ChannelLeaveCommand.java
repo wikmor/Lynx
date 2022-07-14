@@ -19,7 +19,7 @@ public class ChannelLeaveCommand extends SimpleSubCommand {
 		String name = args[0];
 		checkBoolean(ChannelManager.isJoined(getPlayer(), name), "You are not joined in {0} channel.");
 
-		ChannelManager.leave(getPlayer(), name);
+		ChannelManager.leave(getPlayer());
 		tellWarn("You have left {0} channel.");
 	}
 }

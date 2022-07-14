@@ -14,8 +14,8 @@ public final class ChannelManager {
 		playerChannels.put(player.getUniqueId(), channel);
 	}
 
-	public static void leave(Player player, String channel) {
-		playerChannels.remove(player.getUniqueId(), channel);
+	public static void leave(Player player) {
+		playerChannels.remove(player.getUniqueId());
 	}
 
 	public static boolean isJoined(Player player, String channelName) {
