@@ -1,13 +1,9 @@
 package me.wikmor.lynx;
 
-import java.util.Iterator;
-
 import org.bukkit.entity.Cow;
 import org.bukkit.entity.Entity;
-import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.block.BlockBreakEvent;
-import org.bukkit.event.player.AsyncPlayerChatEvent;
 import org.bukkit.event.player.PlayerInteractEntityEvent;
 import org.mineacademy.fo.Common;
 import org.mineacademy.fo.Messenger;
@@ -32,26 +28,26 @@ public final class Lynx extends SimplePlugin {
 		//registerCommands(new ChannelCommandGroup());
 	}
 
-	@EventHandler
+	/*@EventHandler
 	public void onChat(AsyncPlayerChatEvent event) {
 		Player player = event.getPlayer();
-
+	
 		String senderChannel = ChannelManager.getChannel(player);
-
+	
 		if (senderChannel == null) {
 			Messenger.error(player, "You have no channel to type into.");
-
+	
 			event.setCancelled(true);
 			return;
 		}
-
+	
 		for (Iterator<Player> iterator = event.getRecipients().iterator(); iterator.hasNext();) {
 			Player recipient = iterator.next();
-
+	
 			if (!ChannelManager.isJoined(recipient, senderChannel))
 				iterator.remove();
 		}
-	}
+	}*/
 
 	@EventHandler
 	public void onBlockBreak(BlockBreakEvent event) {
@@ -84,7 +80,7 @@ public final class Lynx extends SimplePlugin {
 		System.out.println("1 Message: " + event.getMessage());
 		System.out.println("Is this event run on the primary thread (sync)? " + Bukkit.isPrimaryThread());
 		// don't use event.isAsynchronous() - plugins can 'lie'
-
+	
 		event.setCancelled(true);
 	}*/
 
