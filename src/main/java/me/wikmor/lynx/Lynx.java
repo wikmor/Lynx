@@ -26,24 +26,26 @@ public final class Lynx extends SimplePlugin {
 	protected void onReloadablesStart() {
 		//registerCommand(new SpawnEntityCommand());
 		//registerCommands(new ChannelCommandGroup());
+
+		Common.runTimer(20, new Broadcaster());
 	}
 
 	/*@EventHandler
 	public void onChat(AsyncPlayerChatEvent event) {
 		Player player = event.getPlayer();
-	
+
 		String senderChannel = ChannelManager.getChannel(player);
-	
+
 		if (senderChannel == null) {
 			Messenger.error(player, "You have no channel to type into.");
-	
+
 			event.setCancelled(true);
 			return;
 		}
-	
+
 		for (Iterator<Player> iterator = event.getRecipients().iterator(); iterator.hasNext();) {
 			Player recipient = iterator.next();
-	
+
 			if (!ChannelManager.isJoined(recipient, senderChannel))
 				iterator.remove();
 		}
@@ -80,7 +82,7 @@ public final class Lynx extends SimplePlugin {
 		System.out.println("1 Message: " + event.getMessage());
 		System.out.println("Is this event run on the primary thread (sync)? " + Bukkit.isPrimaryThread());
 		// don't use event.isAsynchronous() - plugins can 'lie'
-	
+
 		event.setCancelled(true);
 	}*/
 
