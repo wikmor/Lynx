@@ -6,6 +6,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 import org.mineacademy.fo.annotation.AutoRegister;
+import org.mineacademy.fo.settings.Lang;
 
 import lombok.AccessLevel;
 import lombok.Getter;
@@ -26,6 +27,8 @@ public final class PlayerListener implements Listener {
 		String tabListName = PlayerData.from(player).getTabListName();
 
 		player.setPlayerListName(tabListName);
+
+		System.out.println("Custom locale key: " + Lang.of("Custom_Section.Boss"));
 	}
 
 	@EventHandler
