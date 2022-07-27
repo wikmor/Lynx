@@ -30,6 +30,32 @@
 #
 # !-----------------------------------------------------------------------------------------------!
 
+# First comment
+Player_Health: 20
+
+# Second comment
+Player_Name: "&ctest ''name"
+
+# Third comment
+Player_Achievements:
+  - "20"
+  - "Kill 10 Bosses"
+  
+Boss:
+  Damage_Multiplier: 18.5
+  Alias: "&cTest \"Name"
+  
+Multiline_Message: |-
+  Hello
+  world
+  dassadssd
+  asd
+  
+Parts:
+  Prefix: 1
+  Player_Name: 2
+  Message: 3
+
 # -------------------------------------------------------------------------------------------------
 # Example of a section
 # -------------------------------------------------------------------------------------------------
