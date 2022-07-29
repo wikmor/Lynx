@@ -23,11 +23,13 @@ public final class PlayerListener implements Listener {
 	@EventHandler
 	public void onJoin(PlayerJoinEvent event) {
 		Player player = event.getPlayer();
+		PlayerData data = PlayerData.from(player);
 
-		String tabListName = PlayerData.from(player).getTabListName();
+		String tabListName = data.getTabListName();
 
 		player.setPlayerListName(tabListName);
 
+		System.out.println("Player " + player.getName() + " has kit: " + data.getKit());
 		System.out.println("Custom locale key: " + Lang.of("Custom_Section.Boss"));
 	}
 

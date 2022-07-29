@@ -16,6 +16,10 @@ public final class Lynx extends SimplePlugin {
 
 	@Override
 	protected void onPluginStart() {
+
+		// DO NOT USE THIS FOR THE KIT SPECIFICALLY BECAUSE IT ALREADY IMPLEMENTS CONFIG SERIALIZABLE
+		//SerializeUtil.addSerializer(PlayerData.Kit.class, kit -> kit.getName());
+
 		/*if (Settings.COMMAND_IS_ENABLED)
 			registerCommand(new SpawnEntityCommand());*/
 
