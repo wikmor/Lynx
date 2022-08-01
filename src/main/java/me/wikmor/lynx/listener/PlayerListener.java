@@ -6,6 +6,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 import org.mineacademy.fo.annotation.AutoRegister;
+import org.mineacademy.fo.debug.LagCatcher;
 import org.mineacademy.fo.settings.Lang;
 
 import lombok.AccessLevel;
@@ -22,15 +23,24 @@ public final class PlayerListener implements Listener {
 
 	@EventHandler
 	public void onJoin(PlayerJoinEvent event) {
+
+		LagCatcher.start("PlayerJoinEvent full event");
+
 		Player player = event.getPlayer();
 		PlayerData data = PlayerData.from(player);
 
 		String tabListName = data.getTabListName();
 
-		player.setPlayerListName(tabListName);
+		LagCatcher.start("Saving tab name");
+		LagCatcher.performanceTest(1000, "saving player data", () -> {
+			player.setPlayerListName(tabListName);
+		});
+		LagCatcher.end("Saving tab name");
 
 		System.out.println("Player " + player.getName() + " has kit: " + data.getKit());
 		System.out.println("Custom locale key: " + Lang.of("Custom_Section.Boss"));
+
+		LagCatcher.end("PlayerJoinEvent full event", true);
 	}
 
 	@EventHandler
